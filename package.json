@@ -1,6 +1,6 @@
 {
   "name": "node-semaphore-sms",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Semaphore SMS API Client for NodeJS",
   "main": "index.js",
   "dependencies": {

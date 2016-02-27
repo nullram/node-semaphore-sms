@@ -54,7 +54,7 @@ Semaphore.prototype.bulksms = function bulksms(numbers, message, callback) {
 
 Semaphore.prototype.status = function status(callback) {
 	var options = {
-	    url: this.endpoint + '/api/sms/account?api=' + config.semaphore.api_key,
+	    url: this.endpoint + '/api/sms/account?api=' + this.apikey,
 	    method: 'GET'
 	}
 	
