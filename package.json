@@ -1,0 +1,31 @@
+{
+  "name": "node-semaphore-sms",
+  "version": "1.0.0",
+  "description": "Semaphore SMS API Client for NodeJS",
+  "main": "index.js",
+  "dependencies": {
+    "request": "2.*"
+  },  
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/earljon/node-semaphore-sms.git"
+  },
+  "keywords": [
+    "semaphore",
+    "sms",
+    "bulksms",
+    "telco"
+  ],
+  "author": "Earljon Hidalgo <earljon@gmail.com> (http://www.earljon.com)",
+  "licenses": [{
+    "type": "MIT",
+    "url": "https://github.com/earljon/node-semaphore-sms/blob/master/LICENSE"
+  }],
+  "bugs": {
+    "url": "https://github.com/earljon/node-semaphore-sms/issues"
+  },
+  "homepage": "https://github.com/earljon/node-semaphore-sms"
+}
