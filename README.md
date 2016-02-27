@@ -26,11 +26,11 @@ You also need to provide your **API KEY** from Semaphore.
     });	
 
     // To send a single SMS message:
-    var payload = [
+    var payload = {
     	from: 'SEMAPHORE',
     	to: '09179008888',
     	message: 'Semaphore API Rocks!'
-    ];
+    };
     sms.sendsms(payload, function(error, result) {
     	if (!error) {
     		console.log(result);

@@ -24,7 +24,7 @@ Semaphore.prototype.sendsms = function sendsms(sms, callback) {
     	}
 
 	var options = {
-	    url: config.semaphore.endpoint + '/api/sms',
+	    url: config.semaphore.url + '/api/sms',
 	    method: 'POST',
 	    headers: this.headers,
 	    form: data
