@@ -18,7 +18,7 @@ You also need to provide your **API KEY** from Semaphore.
 	var sms = new Semaphore();
 
 	// To check your account status:
-    sms.status(url, function(error, result) {
+    sms.status(function(error, result) {
     	if (!error) {
     		console.log(result);
     	} else
