@@ -15,14 +15,14 @@ You also need to provide your **API KEY** from Semaphore.
 ## Usage
 
 	var Semaphore = require('node-semaphore-sms');
-	var sms = new Semaphore();
+
+    var apikey = "YOUR_API_KEY";
+	var sms = new Semaphore(apikey);
 
 	// To check your account status:
     sms.status(function(error, result) {
-    	if (!error) {
+    	if (!error)
     		console.log(result);
-    	} else
-    		console.log(error);
     });	
 
     // To send a single SMS message:
@@ -39,7 +39,7 @@ You also need to provide your **API KEY** from Semaphore.
     });    
 
     // To send SMS to bulk numbers:
-	var bulk_numbers = "09175577472,09054949508";
+	var bulk_numbers = "09179008888,09168769988";
     sms.bulksms(bulk_numbers, function(error, result) {
     	if (!error) {
     		console.log(result);
@@ -54,3 +54,4 @@ MIT
 ## Release History
 
 * 1.0.0 - Initial release
+* 1.0.3 - Minor refactoring

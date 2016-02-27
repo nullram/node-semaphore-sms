@@ -1,7 +1,6 @@
-var config = require('./config');
 var request = require('request');
 
-function Semaphore() {
+function Semaphore(apikey) {
 	if (!(this instanceof Semaphore)) {
 		return new Semaphore();
 	}
@@ -13,18 +12,20 @@ function Semaphore() {
 	}
 
 	this.headers = headers;
+	this.apikey = apikey;
+	this.endpoint = "http://www.semaphore.co";
 };
 
 Semaphore.prototype.sendsms = function sendsms(sms, callback) {
    var data = {
    			from: sms.from,
-	    	api: config.semaphore.api_key, 
+	    	api: this.apikey, 
 	    	number: sms.to, 
 	    	message: sms.message
     	}
 
 	var options = {
-	    url: config.semaphore.url + '/api/sms',
+	    url: this.endpoint + '/api/sms',
 	    method: 'POST',
 	    headers: this.headers,
 	    form: data
@@ -42,7 +43,7 @@ Semaphore.prototype.bulksms = function bulksms(numbers, message, callback) {
     	}
 
 	var options = {
-	    url: config.semaphore.url + '/v3/bulk_api/sms',
+	    url: this.endpoint + '/v3/bulk_api/sms',
 	    method: 'POST',
 	    headers: this.headers,
 	    form: data
@@ -53,7 +54,7 @@ Semaphore.prototype.bulksms = function bulksms(numbers, message, callback) {
 
 Semaphore.prototype.status = function status(callback) {
 	var options = {
-	    url: config.semaphore.url + '/api/sms/account?api=' + config.semaphore.api_key,
+	    url: this.endpoint + '/api/sms/account?api=' + config.semaphore.api_key,
 	    method: 'GET'
 	}
 	
