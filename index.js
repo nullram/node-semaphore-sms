@@ -18,14 +18,14 @@ function Semaphore(apikey) {
 
 Semaphore.prototype.sendsms = function sendsms(sms, callback) {
    var data = {
-   			from: sms.from,
+   			sendername: sms.from,
 	    	api: this.apikey, 
-	    	number: sms.to, 
+	    	apikey: sms.to, 
 	    	message: sms.message
     	}
 
 	var options = {
-	    url: this.endpoint + '/api/sms',
+	    url: this.endpoint + '/api/v4/messages',
 	    method: 'POST',
 	    headers: this.headers,
 	    form: data
@@ -54,7 +54,7 @@ Semaphore.prototype.bulksms = function bulksms(numbers, message, callback) {
 
 Semaphore.prototype.status = function status(callback) {
 	var options = {
-	    url: this.endpoint + '/api/sms/account?api=' + this.apikey,
+	    url: this.endpoint + '/api/v4/account?apikey=' + this.apikey,
 	    method: 'GET'
 	}
 	
