@@ -19,8 +19,8 @@ function Semaphore(apikey) {
 Semaphore.prototype.sendsms = function sendsms(sms, callback) {
    var data = {
    			sendername: sms.from,
-	    	api: this.apikey, 
-	    	apikey: sms.to, 
+	    	apikey: this.apikey, 
+	    	number: sms.to, 
 	    	message: sms.message
     	}
 
